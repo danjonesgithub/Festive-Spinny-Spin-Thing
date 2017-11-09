@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html style="padding: 0px;">
+<head>
+<title>The SmallWorlders Festive Spinny Spin Thing</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta property="og:title" content="SmallWorlders Festive Spinny Spin Thing™" /> 
+<meta property="og:type" content="article" /> 
+<meta property="og:site_name" content="SmallWorlders.com" /> 
+<meta property="og:url" content="http://www.smallworlders.com/xmas" /> 
+<meta property="article:section" content="Section" /> 
+<meta property="og:description" content="Grab some festive cheer with the SmallWorlders Festive Spinny Spin Thing™. You should be pretty excited. There's even prizes to be won." /> 
+<meta name="twitter:site" content="@SmallWorlders" />
+<meta property="og:image" content="http://www.smallworlders.com/xmas/image/SmallworldersXmasSpin.jpg" /> 
+<script src="js/jquery.min.js"></script>
+<link rel="stylesheet" href="css/jquery-ui.css" />
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/jQueryRotate.js"></script>
+<script type="text/javascript" src="js/TweenMax.min.js"></script>
+<script type="text/javascript" src="js/jquery.scrollmagic.min.js"></script>
+<link rel="stylesheet" href="css/sst.css" />
+<link rel="stylesheet" href="font/font.css" type="text/css" />
+<script src="js/sst.js"></script>
+<!--[if lt IE 9]>
+	<script type="text/javascript">
+		browser.isIE = true;
+		friction = 2.5;
+		pegFriction = 3.5;
+	</script>
+<![endif]-->
+<!--[if IE 9]>
+	<script type="text/javascript">
+		browser.version = 'IE9';
+	</script>
+<![endif]-->
+</head>
+
+<body style="padding: 0px; margin: 0px;">
+	<div id="topBarBack">&nbsp;</div>
+	<table id="intropageContainerTable">
+		<tr>
+			<td style="text-align: center; vertical-align: middle;">
+				<span id="msgLine1">Grab Some</span><br/>
+				<span id="msgLine2">Festive Cheer</span><br/>
+				<span id="msgLine3"><span id="withThe">with the</span><span id="spacer">&nbsp;</span><a href="http://www.smallworlders.com" id="SWLogo"><img id="SWLogoImgBlack" src="image/SWLogoBlack.png"/></a></span><br/>
+				<span id="msgLine4"><img id="FSSTLogoImg" src="image/FSSTLogo.png"/></span><br/>
+				<span id="scrollTapContainer" onclick="introPageScroll();">
+					<span id="msgLine5">Click to begin</span><br/>
+					<span id="msgLine6"><img id="scrollIcon1" class="scrollIcon" src="image/scrollIcon.gif"/><img id="scrollIcon2" class="scrollIcon" src="image/scrollIcon.gif"/></span>
+				</span>
+			</td>
+		</tr>
+	</table>
+	<div id="topBar">
+		<span id="FSSTLogoTop"><a href="index.html"><img id="FSSTLogoImg" src="image/FSSTLogoTop.png"/></a></span>
+		<span id="SWLogoTop"><a href="http://www.smallworlders.com"><img id="SWLogoImgWhite" src="image/SmallworldersLogoTopBarNew.png"/></a></span>
+		<span id="spinAgain" onclick="spinAgain();"></span>
+		<!--<span id="topLinks">
+		<span id="topText">Share "<span id="customTopText">Spinny Spin Thing</span>"</span>
+			<a id="shareEmail" class="shareButtonLink" href=""><img id="shareEmailImg" class="shareButton" src="image/share-email.jpg" /></a><a id="shareTwitter" class="shareButtonLink" href=""><img id="shareTwitterImg" class="shareButton" src="image/share-twitter.jpg" /></a><a id="shareLinkdin" class="shareButtonLink" href=""><img id="shareLinkdinImg" class="shareButton" src="image/share-linkdin.jpg" /></a><a class="shareButtonLink" id="shareFacebook" href="javascript:shareFacebook();"><div class="fb-share-button" data-href="http://www.smallworlders.com/xmas" data-layout="icon"></div></a>
+		</span>-->
+	</div>
+	<div id="bottomBar">
+		<span id="SWLogoBot"><a href="http://www.smallworlders.com"><img id="SWLogoImgWhiteBot" src="image/SmallworldersLogoTopBarNew.png"/></a></span>
+		<span id="bottomLinks">
+			<span id="bottomText">Share "<span id="customBottomText">Spinny Spin Thing</span>"</span>
+			<a id="shareEmailBot" class="shareButtonLinkBot" href=""><img id="shareEmailImgBot" class="shareButtonBot" src="image/share-email.jpg" /></a><a id="shareTwitterBot" class="shareButtonLinkBot" href=""><img id="shareTwitterImgBot" class="shareButtonBot" src="image/share-twitter.jpg" /></a><a id="shareLinkdinBot" class="shareButtonLinkBot" href=""><img id="shareLinkdinImgBot" class="shareButtonBot" src="image/share-linkdin.jpg" /></a><a class="shareButtonLinkBot" id="shareFacebookBot" href=""><img id="shareFacebookImgBot" class="shareButtonBot" src="image/share-facebook.jpg" /></a>
+		</span>
+	</div>
+	<div id="videoContainer">
+		<video class="video vAlign" src="video/video.mp4" id="videoWalkin" onplay="videoWalkinPlaying=true;" onended="videoWalkinPlaying=false; switchToStandingVid(this);" preload="auto"></video>
+		<video class="video vAlign" style="display: none;" src="" onplay="videoStandingPlaying=true;" onpause="videoStandingPlaying=false;" id="videoStanding" loop preload="auto"></video>
+		<video class="video vAlign" style="display: none;" src="" id="videoSpin" onplay="videoSpinPlaying=true;" onended="videoSpinPlaying=false; switchToStandingVid(this);" preload="auto"></video>
+		<video class="video vAlign" style="display: none;" src="" onplay="videoWalkoutPlaying=true;" id="videoWalkout" preload="auto"></video>
+	</div>
+	<div id="gifImgContainer">
+		<img id="gifImg" class="vAlign" src=""/>
+	</div>
+	<div id="mainPage">
+		<div id="wheelContainer" class="vAlign">
+			<img class="wheelLayer" src="image/Wheel-Back.png" id="wheelBack"/>
+			<img class="wheelLayer" src="image/WheelCategoriesNew.png" id="wheelCategories"/>
+			<img class="wheelLayer" src="image/Wheel-Darkening.png" id="wheelDarkening"/>
+			<img class="wheelLayer" src="image/Wheel-Centre.png" id="wheelCentre"/>
+			<img id="clickerPeg" src="image/Wheel-Pin.png"/>
+			<!--<embed src="sound/beep.wav" id="beepIE" autostart="false" width="0" height="0" enablejavascript="true">
+			<audio src="sound/beep.wav" id="beep" preload="auto"></audio>-->
+		</div>
+		<span id="nextPersonButtonContainer">
+			<span id="nextPersonContainerInner">
+				<img id="nextPersonButton" src="image/switchHost.png" onclick="nextPerson();"/>
+			</span>
+			<span id="personName"></span>
+		</span>
+	</div>
+	<div id="startMessageContainer" onclick="startWheel();">
+		<img id="startMessageContainerImg" src="image/spinMeButtonLarge.png"/>
+	</div>
+	<div id="winningCategoryContainer">
+		<div id="winningCategoryContainerBack"></div>
+		<div id="websiteIframeContainer">
+			<iframe id="websiteIframe" frameborder="no" src=""></iframe>
+			<span id="websiteSource">
+				Source:
+				<span id="websiteSourceUrl">&nbsp;</span>
+			</span>
+		</div>
+		<div id="winningCategoryBanner">
+			<img id="winningCategoryBannerImg" src="image/OptionSelectedBackground2.png"/>
+			<div id="winningCategoryBannerInner">
+				<span id="wMesgLine1">Congratulations! You Landed On</span>
+				<span id="wMesgLine2"><img id="winningCategoryImg" src="image/XmasFunNew.png"/></span>
+				<span id="wMesgLine3">for your dose of festive cheer, we present to you</span>
+				<span id="wMesgLine4"></span>
+			</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+<!--
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-7683255-1']);_gaq.push(['_trackPageview']);
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+//-->
+</script>
+</html>

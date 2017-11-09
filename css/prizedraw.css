@@ -1,0 +1,61 @@
+/* CSS Reset */
+* {margin: 0px; padding: 0px; font-size: inherit; line-height: inherit;}
+body {font-size: 16px; color: #364c56; -webkit-font-smoothing: antialiased; text-shadow: 1px 1px 1px rgba(0,0,0,0.004); font-weight: normal; font-family: 'DINMedium', 'Arial', 'Sans-Serif'; line-height: 1.2em;}
+p {margin-bottom: 20px;}
+div {}
+span {vertical-align: bottom;}
+a {vertical-align: bottom; color: #6591a2; text-decoration: none; cursor: pointer; }
+a:hover {text-decoration: underline; }
+img {border: none;}
+h1 {text-transform: uppercase; line-height: 1.2em; font-size: 100px; font-style: normal; font-weight: bold; margin-bottom: 10px; }
+h2 {text-transform: uppercase; line-height: 1.2em; font-size: 40px; font-style: normal; font-weight: normal; margin-bottom: 10px; }
+h3 {text-transform: none; line-height: 1.2em; font-size: 20px; font-style: normal; font-weight: normal; margin-bottom: 10px; }
+h4 {margin-bottom: 10px; }
+h5 {margin-bottom: 10px; }
+h6 {margin-bottom: 10px; }
+ul, ol {margin-bottom: 10px;  padding: 0px 0px 0px 40px;}
+li {margin-bottom: 5px; }
+table {border-spacing: 0px; border-collapse: collapse; border: none;}
+tr, tbody, thead, td {padding: 0px;}
+
+/*semi-transparent, auto-hiding scrollbars*/
+@-ms-viewport { width: device-width; }
+html {overflow-y: auto;}
+
+/*CSS Vertical-align*/
+.vAlign {position: relative; top: 50%; -webkit-transform: translateY(-50%); -ms-transform: translateY(-50%); transform: translateY(-50%);}
+.vAlignParent {-webkit-transform-style: preserve-3d; -moz-transform-style: preserve-3d; transform-style: preserve-3d;}
+
+html, body {height: 100%;}
+body {background-image: url(../image/bg.jpg); background-size: cover;}
+span#video {display: inline-block; vertical-align: top; width: 49%; text-align: right;}
+span#entry {display: inline-block; vertical-align: top; width: 49%; text-align: left;}
+span#entryInner {display: inline-block; width: 650px; padding: 0px 20px 0px 40px;}
+span#entryInner h2 {line-height: 25px; margin-bottom: 20px;}
+span#entryInner h2.thanks {line-height: 1.2em;}
+span#videoInner {display: inline-block; width: 650px; height: 400px; background-color: black;}
+input.prizeInput {height: 44px; border: 2px solid #384c57; background-color: rgba(255,255,255,0.2); margin-bottom: 10px; color: #384c57; line-height: 44px; text-indent: 25px;}
+input.prizeInput:hover {background-color: rgba(255,255,255,0.5);}
+input#nameInput {width: 438px;}
+input#emailInput {width: 618px;}
+input#submitInput {cursor: pointer; background-color: #1d75bd; border: 2px solid #384c57; color: white; font-size: 16px; text-transform: uppercase; height: 44px; text-align: center; padding: 0px 27px;}
+input#submitInput:hover {background-color: #2288dc;}
+
+@media all and (max-width: 1400px){
+span#video {display: block; width: 650px; margin: 50px auto 0px auto;}
+span#entry {display: block; width: 650px; margin: 20px auto 50px auto;}
+span#entryInner {display: block; padding: 0px 0px 0px 0px;}
+span#videoInner {display: block; padding: 0px 0px 0px 0px;}
+span#entryInner h2 {line-height: 1.2em; margin-bottom: 10px;}
+.vAlign {top: auto; -webkit-transform: translateY(0%); -ms-transform: translateY(0%); transform: translateY(0%);}
+}
+
+@media all and (max-width: 768px){
+span#video {display: block; width: 80%; margin: 50px auto 0px auto;}
+span#entry {display: block; width: 80%; margin: 20px auto 50px auto;}
+span#entryInner {display: block; width: auto; padding: 0px 0px 0px 0px;}
+span#videoInner {display: block; width: auto; padding: 0px 0px 0px 0px; height: auto;}
+input#nameInput {width: 100%;}
+input#emailInput {width: 100%;}
+
+}

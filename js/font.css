@@ -1,0 +1,5 @@
+@font-face {
+	font-family: 'DINMedium';
+	src: url('./DINMedium.eot');
+	src: local('DINMedium'), url('./DINMedium.woff') format('woff'), url('./DINMedium.ttf') format('truetype');
+}

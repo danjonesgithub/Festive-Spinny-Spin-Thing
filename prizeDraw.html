@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html style="padding: 0px;">
+	<head>
+		<title>Festive Spinny Spin Thing - Prize Draw!!</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/prizedraw.js"></script>
+		<link rel="stylesheet" href="css/prizedraw.css" />
+		<link rel="stylesheet" href="font/font.css" type="text/css" />
+		<!--[if IE 9]>
+			<script type="text/javascript">
+				browser.version = 'IE9';
+			</script>
+		<![endif]-->
+	</head>
+	<body>
+		<div id="prizedrawContainer" class="vAlign">
+			<span id="video">
+				<span id="videoInner" style="height: 400px;">
+					<iframe width="100%" height="100%" onload="if(browser.version != 'IE9'){$('#videoInner').height($('#videoInner').width()*400/650);}" src="http://www.youtube.com/embed/0gVSUVIgljg?autoplay=1" frameborder="0" allowfullscreen></iframe>
+				</span>
+			</span>
+			<span id="entry">
+				<span id="entryInner">
+					<form id="entryForm" onsubmit="validateForm(this);" action="save.aspx" method="post">
+						<h2>Excited? Sure You Are.</h2>
+						<p>If you'd like to go into the draw to win one of these top quality Kevin Collectables&trade;, just enter your details below. Feel free to submit more than one entry per person - we totally understand how bad you want this merchandise.</p>
+						<input id="nameInput" name="name" class="prizeInput" type="text" value="Name" onfocus="inputFocus(this,'Name');" onblur="inputBlur(this,'Name');"></input><br/>
+						<input id="emailInput" name="email" class="prizeInput" type="text" value="Email" onfocus="inputFocus(this,'Email');" onblur="inputBlur(this,'Email');"></input>
+						<p>The winners will be contacted in the new year.</p>
+						<input id="submitInput" type="submit" value="submit, and fingers crossed!"></input>
+					</form>
+				</span>
+			</span>
+		</div>
+	</body>
+</html>
